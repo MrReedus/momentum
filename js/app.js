@@ -1,6 +1,5 @@
 const time = document.querySelector(".time");
-
-console.log(time);
+const date = document.querySelector(".date");
 
 const displayTime = () => {
   let nowTime = new Date();
@@ -20,3 +19,37 @@ const addZeroNum = (number) => {
 };
 
 setInterval(displayTime, 1000);
+
+const displayDate = () => {
+  let days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+
+  let mounths = [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ];
+
+  let nowDate = new Date();
+
+  let day = nowDate.getDay();
+
+  let mounth = nowDate.getMonth();
+
+  date.innerHTML = days[day] + ", " + mounths[mounth] + " " + day;
+};
+
+displayDate();
+
+// let nowDate = new Date();
+// let day = nowDate.getDate();
+// let mounth = nowDate.getMonth();
+// console.log(day);
